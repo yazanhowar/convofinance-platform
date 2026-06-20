@@ -1,0 +1,30 @@
+-- 02_policies.sql : enable RLS + public-read (writes restricted to service role)
+alter table banks enable row level security;
+alter table bank_financials enable row level security;
+alter table bank_rates enable row level security;
+alter table bank_tariffs enable row level security;
+alter table bank_announcements enable row level security;
+alter table bank_board_members enable row level security;
+alter table bank_executives enable row level security;
+alter table bank_ownership enable row level security;
+alter table bank_products enable row level security;
+alter table bank_real_estate enable row level security;
+alter table bank_stock_data enable row level security;
+alter table annual_reports enable row level security;
+alter table data_sources enable row level security;
+alter table cbj_policy_rates enable row level security;
+
+create policy "public_read_banks" on banks for select using (true);
+create policy "public_read_bank_financials" on bank_financials for select using (true);
+create policy "public_read_bank_rates" on bank_rates for select using (true);
+create policy "public_read_bank_tariffs" on bank_tariffs for select using (true);
+create policy "public_read_bank_announcements" on bank_announcements for select using (true);
+create policy "public_read_bank_board_members" on bank_board_members for select using (true);
+create policy "public_read_bank_executives" on bank_executives for select using (true);
+create policy "public_read_bank_ownership" on bank_ownership for select using (true);
+create policy "public_read_bank_products" on bank_products for select using (true);
+create policy "public_read_bank_real_estate" on bank_real_estate for select using (true);
+create policy "public_read_bank_stock_data" on bank_stock_data for select using (true);
+create policy "public_read_annual_reports" on annual_reports for select using (true);
+create policy "public_read_data_sources" on data_sources for select using (true);
+create policy "public_read_cbj_policy_rates" on cbj_policy_rates for select using (true);
